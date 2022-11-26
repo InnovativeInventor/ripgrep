@@ -956,7 +956,7 @@ impl<'a, M: Matcher, W: WriteColor> StandardImpl<'a, M, W> {
         StandardImpl { sunk: sunk, ..StandardImpl::new(searcher, sink) }
     }
 
-    #[inline(always)]
+    #[inline]
     fn sink(&self) -> io::Result<()> {
         self.write_search_prelude()?;
         if self.sunk.matches().is_empty() {
